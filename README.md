@@ -2,7 +2,7 @@
 
 A Python script to send SMS messages using various SMS APIs including Twilio, Telnyx, Nexmo, or your own private gateway.
 
-[image](https://i.imgur.com/jOvRcu9.jpg)
+![image](https://i.imgur.com/jOvRcu9.jpg)
 
 ## Features
 
