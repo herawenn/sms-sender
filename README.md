@@ -1,19 +1,20 @@
 # SMS Sender
 
-A Python script to send SMS messages using various SMS APIs including Twilio, Telnyx, Nexmo, or your own private gateway.
+A Python script to send SMS messages using the Textbelt API.
 
-![image](https://i.imgur.com/jOvRcu9.jpg)
+![image](https://i.imgur.com/Dezm3bM.png)
 
 ## Features
 
-- Supports sending SMS messages using Twilio, Telnyx, Nexmo, and a private SMS gateway.
-- Imports phone numbers from a file.
+- Supports sending SMS messages using the Textbelt API.
 - Colorful and customizable banner display.
+- Supports sending single and mass SMS messages.
+- Configurable via environment variables.
 
 ## Prerequisites
 
 - Python 3.x
-- Required Python packages: `pyfiglet`, `requests`, `termcolor`, `twilio`
+- Required Python packages: `aiohttp`, `colorama`, `python-dotenv`
 
 ## Installation
 
@@ -26,23 +27,42 @@ A Python script to send SMS messages using various SMS APIs including Twilio, Te
 2. Install the required Python packages:
 
     ```bash
-    pip install pyfiglet requests termcolor twilio
+    pip install -r requirements.txt
     ```
+
+## Configuration
+
+Create a `.env` file in the root directory of the project and add the following environment variables:
+
+API_KEY1=your_api_key_1
+API_KEY2=your_api_key_2
+API_KEY3=your_api_key_3
+RATE_LIMIT=10
+RETRY_POLICY=3
+TIMEOUT_DURATION=10
+DEFAULT_SENDER_NAME=your_default_sender_name
 
 ## Usage
 
 1. Run the script:
 
     ```bash
-    python sms-sender.py
+    python sms.py
     ```
 
-2. Enter the file path containing the list of phone numbers.
-3. Choose an SMS API (Twilio, Telnyx, Nexmo, Private) by selecting the corresponding number.
-4. Follow the prompts to enter API credentials, message body, and sender ID.
-5. The script will send the SMS messages to the phone numbers listed in the file.
+2. Choose an option from the main menu:
+    - `1`: SMS Menu
+    - `0`: Quit
+
+3. In the SMS Menu, choose an option:
+    - `1`: Send a Single SMS
+    - `2`: Send a Mass SMS
+    - `0`: Main Menu
+
+4. Follow the prompts to enter the target phone number, message body, sender ID, and optional file URL.
+
+5. The script will send the SMS messages using the Textbelt API.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
